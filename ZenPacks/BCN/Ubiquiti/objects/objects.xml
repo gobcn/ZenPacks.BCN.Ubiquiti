@@ -1,0 +1,2983 @@
+<?xml version="1.0"?>
+<objects>
+<!-- ('', 'zport', 'dmd', 'Devices', 'Network', 'Wireless', 'Ubiquiti', 'airMAX AP') -->
+<object id='/zport/dmd/Devices/Network/Wireless/Ubiquiti/airMAX AP' module='Products.ZenModel.DeviceClass' class='DeviceClass'>
+<property id='zendoc' type='string'>
+Ubiquiti AP
+</property>
+<property type="string" id="description" mode="w" >
+Ubiquiti AP
+</property>
+<property visible="True" type="string" id="zPythonClass" >
+ZenPacks.BCN.Ubiquiti.UbiquitiAccessPointDevice
+</property>
+<property visible="True" type="string" id="zIcon" >
+/zport/dmd/UbiquitiRocketM.png
+</property>
+<property visible="True" type="lines" id="zCollectorPlugins" >
+['zenoss.snmp.NewDeviceMap', 'zenoss.snmp.DeviceMap', 'zenoss.snmp.InterfaceMap', 'zenoss.snmp.RouteMap', 'ZenPacks.BCN.Ubiquiti.UbiquitiAccessPointDevice', 'ZenPacks.BCN.Ubiquiti.UbiquitiSubscriberStation']
+</property>
+<property visible="True" type="lines" id="zDeviceTemplates" >
+['b_fping', 'Device', 'UbiquitiAccessPoint']
+</property>
+<tomanycont id='rrdTemplates'>
+<object id='UbiquitiAccessPoint' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='loadValue1' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.3.1
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='loadValue1' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='loadValue15' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.3.3
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='loadValue15' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='loadValue5' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.3.2
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='loadValue5' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='memBuffer' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.3.0
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='memBuffer' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='memCache' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.4.0
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='memCache' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='memFree' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.2.0
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='memFree' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='memTotal' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.1.0
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='memTotal' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='Load Average' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+percent
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='loadValue1' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+1 Minute
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+loadValue1_loadValue1
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='loadValue15' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+15 Minute
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+loadValue15_loadValue15
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='loadValue5' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+5 Minute
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+loadValue5_loadValue5
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Memory Utilization' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+MB
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='memBuffer' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Buffered
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+1024,*
+</property>
+<property type="string" id="dpName" mode="w" >
+memBuffer_memBuffer
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='memCache' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Cached
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+1024,*
+</property>
+<property type="string" id="dpName" mode="w" >
+memCache_memCache
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='memFree' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+3
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+2
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Free
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+1024,*
+</property>
+<property type="string" id="dpName" mode="w" >
+memFree_memFree
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='memTotal' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+Used
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+1024,*
+</property>
+<property type="string" id="dpName" mode="w" >
+memTotal_memTotal
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<object id='UbiquitiSubscriberStation' module='Products.ZenModel.RRDTemplate' class='RRDTemplate'>
+<property type="string" id="targetPythonClass" mode="w" >
+Products.ZenModel.Device
+</property>
+<tomanycont id='datasources'>
+<object id='mtxrWlRtabRxBytes' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.5
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='mtxrWlRtabRxBytes' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+DERIVE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mtxrWlRtabRxPackets' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.7
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='mtxrWlRtabRxPackets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+DERIVE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mtxrWlRtabStrength' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.3
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='mtxrWlRtabStrength' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mtxrWlRtabTxBytes' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.4
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='mtxrWlRtabTxBytes' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+DERIVE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='mtxrWlRtabTxPackets' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+SNMP
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.6
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='mtxrWlRtabTxPackets' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+DERIVE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+<property type="string" id="rrdmin" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='ssStatus' module='Products.ZenModel.BasicDataSource' class='BasicDataSource'>
+<property select_variable="sourcetypes" type="selection" id="sourcetype" mode="w" >
+COMMAND
+</property>
+<property type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="component" mode="w" >
+${here/name}
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Cmd/Fail
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="string" id="commandTemplate" mode="w" >
+${here/ZenPackManager/packs/ZenPacks.BCN.Ubiquiti/path}/libexec/statuspull.sh ${dev/zSnmpVer} ${dev/zSnmpCommunity} ${dev/manageIp} ${here/snmpindex}
+</property>
+<property type="int" id="cycletime" mode="w" >
+300
+</property>
+<property type="boolean" id="usessh" mode="w" >
+False
+</property>
+<property type="string" id="parser" mode="w" >
+Auto
+</property>
+<tomanycont id='datapoints'>
+<object id='ssStatus' module='Products.ZenModel.RRDDataPoint' class='RRDDataPoint'>
+<property select_variable="rrdtypes" type="selection" id="rrdtype" mode="w" >
+GAUGE
+</property>
+<property type="boolean" id="isrow" mode="w" >
+True
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+<tomanycont id='thresholds'>
+<object id='Ubiquiti Subscriber Status' module='Products.ZenModel.MinMaxThreshold' class='MinMaxThreshold'>
+<property label="DataPoints" type="lines" id="dsnames" mode="w" >
+['ssStatus_ssStatus']
+</property>
+<property label="Enabled" type="boolean" id="enabled" mode="w" >
+True
+</property>
+<property type="string" id="minval" mode="w" >
+1
+</property>
+<property type="string" id="maxval" mode="w" >
+1
+</property>
+<property type="string" id="eventClass" mode="w" >
+/Status/UbiquitiSubscriberStation
+</property>
+<property type="int" id="severity" mode="w" >
+3
+</property>
+<property type="int" id="escalateCount" mode="w" >
+0
+</property>
+</object>
+</tomanycont>
+<tomanycont id='graphDefs'>
+<object id='Packets' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+packets/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<tomanycont id='graphPoints'>
+<object id='Inbound' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mtxrWlRtabRxPackets_mtxrWlRtabRxPackets
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='Outbound' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mtxrWlRtabTxPackets_mtxrWlRtabTxPackets
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Signal - RSSI' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+dBm
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<property type="long" id="sequence" mode="w" >
+2
+</property>
+<tomanycont id='graphPoints'>
+<object id='Signal Strength' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="dpName" mode="w" >
+mtxrWlRtabStrength_mtxrWlRtabStrength
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+<object id='Throughput' module='Products.ZenModel.GraphDefinition' class='GraphDefinition'>
+<property type="int" id="height" mode="w" >
+100
+</property>
+<property type="int" id="width" mode="w" >
+500
+</property>
+<property type="string" id="units" mode="w" >
+bits/sec
+</property>
+<property type="boolean" id="log" mode="w" >
+False
+</property>
+<property type="boolean" id="base" mode="w" >
+False
+</property>
+<property type="int" id="miny" mode="w" >
+-1
+</property>
+<property type="int" id="maxy" mode="w" >
+-1
+</property>
+<property type="boolean" id="hasSummary" mode="w" >
+True
+</property>
+<tomanycont id='graphPoints'>
+<object id='Inbound' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+AREA
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+8,*
+</property>
+<property type="string" id="dpName" mode="w" >
+mtxrWlRtabTxBytes_mtxrWlRtabTxBytes
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+<object id='Outbound' module='Products.ZenModel.DataPointGraphPoint' class='DataPointGraphPoint'>
+<property type="long" id="sequence" mode="w" >
+1
+</property>
+<property select_variable="lineTypes" type="selection" id="lineType" mode="w" >
+LINE
+</property>
+<property type="long" id="lineWidth" mode="w" >
+1
+</property>
+<property type="boolean" id="stacked" mode="w" >
+False
+</property>
+<property type="string" id="format" mode="w" >
+%5.2lf%s
+</property>
+<property type="string" id="legend" mode="w" >
+${graphPoint/id}
+</property>
+<property type="long" id="limit" mode="w" >
+-1
+</property>
+<property type="string" id="rpn" mode="w" >
+8,*
+</property>
+<property type="string" id="dpName" mode="w" >
+mtxrWlRtabRxBytes_mtxrWlRtabRxBytes
+</property>
+<property type="string" id="cFunc" mode="w" >
+AVERAGE
+</property>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+</tomanycont>
+</object>
+<!-- ('', 'zport', 'dmd', 'Events', 'Status', 'UbiquitiSubscriberStation') -->
+<object id='/zport/dmd/Events/Status/UbiquitiSubscriberStation' module='Products.ZenEvents.EventClass' class='EventClass'>
+<property type="text" id="transform" mode="w" >
+import re
+from transaction import commit
+
+if evt.summary.startswith('threshold of Ubiquiti Subscriber Status'):
+    ssinfo = ""
+    if device:
+        for ss in device.ubiquitiSubscriberStation():
+           if ss.id == evt.component:
+              if ss.ssDeviceName:
+                 ssinfo = ss.ssDeviceName
+              else:
+                 ssinfo = ss.id
+              m = re.search("threshold of [^:]+: current value ([\d\.]+)", evt.message)
+              if not m: continue
+              currentvalue = (int(float(m.groups()[0])))
+
+              # manually set SS status indicator
+              if (currentvalue == 1 and ss.ssStatus != 1):
+                 ss.ssStatus=1
+                 commit()
+
+              if (currentvalue == 0 and ss.ssStatus != 0):
+                 ss.ssStatus=0
+                 commit()
+
+              #only create the event if it is a VIP customer so device does not turn yellow from home customer going down
+              if ss.ssDeviceName.startswith('vip-'):
+                  if evt.severity &gt; 0:
+                      evt.summary = "subscriber station " + ssinfo + " is DOWN "
+                      evt.severity=4
+                  else:
+                      evt.summary = "subscriber station " + ssinfo + " is UP "
+                  evt.message = evt.summary
+              else:
+                  evt._action = 'drop'
+              break
+elif evt.summary.startswith('threshold of signal strength '):
+    suinfo = ""
+    if device:
+        for ss in device.ubquitiSubscriberUnit():
+           if ss.id == evt.component:
+              if ss.ssDeviceName:
+                 ssinfo = ss.id + " (" + ss.ssDeviceName + ")"
+              else:
+                 ssinfo = ss.id
+              m = re.search("threshold of [^:]+: current value ([-?\d\.]+)", evt.message)
+              if not m: continue
+              currentvalue = float(m.groups()[0])
+
+              #only create the event if it is a VIP customer so device does not turn yellow from home customer issue
+              #also ignore signal -120dB because a subscriber down event will be generated
+              if (ss.ssDeviceName.startswith('vip-') and (currentvalue &gt; -120.0)):
+                 if evt.severity &gt; 0:
+                     evt.summary = "subscriber station " + ssinfo + " has BAD SIGNAL STRENGTH (" + str(currentvalue) + "dB)"
+                     evt.severity=4
+                 else:
+                     evt.summary = "subscriber station " + ssinfo + " signal strength has returned to normal (" + str(currentvalue) + "dB)"
+                 evt.message = evt.summary
+              else:
+                 evt._action = 'drop'
+              break
+</property>
+<property type="text" id="transform" mode="w" >
+import re
+from transaction import commit
+
+if evt.summary.startswith('threshold of Ubiquiti Subscriber Status'):
+    ssinfo = ""
+    if device:
+        for ss in device.ubiquitiSubscriberStation():
+           if ss.id == evt.component:
+              if ss.ssDeviceName:
+                 ssinfo = ss.ssDeviceName
+              else:
+                 ssinfo = ss.id
+              m = re.search("threshold of [^:]+: current value ([\d\.]+)", evt.message)
+              if not m: continue
+              currentvalue = (int(float(m.groups()[0])))
+
+              # manually set SS status indicator
+              if (currentvalue == 1 and ss.ssStatus != 1):
+                 ss.ssStatus=1
+                 commit()
+
+              if (currentvalue == 0 and ss.ssStatus != 0):
+                 ss.ssStatus=0
+                 commit()
+
+              #only create the event if it is a VIP customer so device does not turn yellow from home customer going down
+              if ss.ssDeviceName.startswith('vip-'):
+                  if evt.severity &gt; 0:
+                      evt.summary = "subscriber station " + ssinfo + " is DOWN "
+                      evt.severity=4
+                  else:
+                      evt.summary = "subscriber station " + ssinfo + " is UP "
+                  evt.message = evt.summary
+              else:
+                  evt._action = 'drop'
+              break
+elif evt.summary.startswith('threshold of signal strength '):
+    suinfo = ""
+    if device:
+        for ss in device.ubquitiSubscriberUnit():
+           if ss.id == evt.component:
+              if ss.ssDeviceName:
+                 ssinfo = ss.id + " (" + ss.ssDeviceName + ")"
+              else:
+                 ssinfo = ss.id
+              m = re.search("threshold of [^:]+: current value ([-?\d\.]+)", evt.message)
+              if not m: continue
+              currentvalue = float(m.groups()[0])
+
+              #only create the event if it is a VIP customer so device does not turn yellow from home customer issue
+              #also ignore signal -120dB because a subscriber down event will be generated
+              if (ss.ssDeviceName.startswith('vip-') and (currentvalue &gt; -120.0)):
+                 if evt.severity &gt; 0:
+                     evt.summary = "subscriber station " + ssinfo + " has BAD SIGNAL STRENGTH (" + str(currentvalue) + "dB)"
+                     evt.severity=4
+                 else:
+                     evt.summary = "subscriber station " + ssinfo + " signal strength has returned to normal (" + str(currentvalue) + "dB)"
+                 evt.message = evt.summary
+              else:
+                 evt._action = 'drop'
+              break
+</property>
+</object>
+<!-- ('', 'zport', 'dmd', 'Mibs', 'mibs', 'FROGFOOT-RESOURCES-MIB') -->
+<object id='/zport/dmd/Mibs/mibs/FROGFOOT-RESOURCES-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
+<property id='zendoc' type='string'>
+The MIB module to describe system resources.
+</property>
+<property type="string" id="language" mode="w" >
+SMIv2
+</property>
+<property type="string" id="contact" mode="w" >
+	Abraham van der Merwe
+
+Postal: Frogfoot Networks CC
+		P.O. Box 23618
+		Claremont
+		Cape Town
+		7735
+		South Africa
+
+Phone: +27 82 565 4451
+Email: abz@frogfoot.net
+</property>
+<property type="string" id="description" mode="w" >
+The MIB module to describe system resources.
+</property>
+<tomanycont id='nodes'>
+<object id='diskDev' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A textual string containing the disk device name.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A textual string containing the disk device name.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='diskDir' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A textual string containing the disk mount point.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A textual string containing the disk mount point.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='diskEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing management information applicable
+to a particular mounted disk on the system.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing management information applicable
+to a particular mounted disk on the system.
+</property>
+</object>
+<object id='diskFSType' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The type of file system present on the disk. This
+does not include fake file systems such as the proc file
+system, devfs, etc. Additional types may be assigned by
+Frogfoot Networks in the future.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The type of file system present on the disk. This
+does not include fake file systems such as the proc file
+system, devfs, etc. Additional types may be assigned by
+Frogfoot Networks in the future.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='diskFree' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Disk space still available (in MB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Disk space still available (in MB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='diskIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A unique value, greater than zero, for each disk on the
+system. It is recommended that values are assigned contiguously
+starting from 1.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A unique value, greater than zero, for each disk on the
+system. It is recommended that values are assigned contiguously
+starting from 1.
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='diskNumber' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of mounted disks present on this system.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of mounted disks present on this system.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='diskTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A table of mounted disks on this system.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A table of mounted disks on this system.
+</property>
+</object>
+<object id='diskTotal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total space on disk (in MB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total space on disk (in MB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='frogfoot' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002
+</property>
+</object>
+<object id='load' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4
+</property>
+</object>
+<object id='loadDescr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A description of each load average.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A description of each load average.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='loadEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+An entry containing load average information.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+An entry containing load average information.
+</property>
+</object>
+<object id='loadIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+A unique value, greater than zero, for each
+load average stored.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+A unique value, greater than zero, for each
+load average stored.
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='loadNumber' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The number of load averages stored in the
+load average table.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The number of load averages stored in the
+load average table.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='loadTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Load average information.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Load average information.
+</property>
+</object>
+<object id='loadValue' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+The 1,5 and 10 minute load averages. These values are
+stored as a percentage of processor load.
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.4.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+The 1,5 and 10 minute load averages. These values are
+stored as a percentage of processor load.
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memBuffer' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Physical memory used by buffers (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Physical memory used by buffers (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memCache' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Physical memory used for caching (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Physical memory used for caching (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memFree' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Available physical memory (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Available physical memory (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memTotal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total usable physical memory (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total usable physical memory (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='memory' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.1
+</property>
+</object>
+<object id='resCompliances' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.31.2.2
+</property>
+</object>
+<object id='resConformance' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.31.2
+</property>
+</object>
+<object id='resGroups' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.31.2.1
+</property>
+</object>
+<object id='resMIB' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.31
+</property>
+</object>
+<object id='resMIBObjects' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.31.1
+</property>
+</object>
+<object id='resources' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='servers' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1
+</property>
+</object>
+<object id='storage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.3
+</property>
+</object>
+<object id='swap' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.2
+</property>
+</object>
+<object id='swapFree' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Swap space still available (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.2.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Swap space still available (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='swapTotal' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Total swap space size (in KB)
+</property>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1.1.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Total swap space size (in KB)
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='system' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+FROGFOOT-RESOURCES-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.10002.1.1
+</property>
+</object>
+</tomanycont>
+</object>
+<!-- ('', 'zport', 'dmd', 'Mibs', 'mibs', 'MIKROTIK-EXPERIMENTAL-MIB') -->
+<object id='/zport/dmd/Mibs/mibs/MIKROTIK-EXPERIMENTAL-MIB' module='Products.ZenModel.MibModule' class='MibModule'>
+<property type="string" id="language" mode="w" >
+SMIv2
+</property>
+<property type="string" id="contact" mode="w" >
+@mikrotik.com
+</property>
+<tomanycont id='nodes'>
+<object id='mikrotik' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988
+</property>
+</object>
+<object id='mikrotikExperimentalModule' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='mtXMetaInfo' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.2
+</property>
+</object>
+<object id='mtXRouterOs' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1
+</property>
+</object>
+<object id='mtXRouterOsGroups' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.2.1
+</property>
+</object>
+<object id='mtxrHealth' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3
+</property>
+</object>
+<object id='mtxrHlBoardTemperature' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlCoreVoltage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+core voltage
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+core voltage
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlCpuTemperature' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+temperature near cpu
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+temperature near cpu
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlFiveVoltage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+5V voltage
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+5V voltage
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlSensorTemperature' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+temperature at sensor chip
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+temperature at sensor chip
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlThreeDotThreeVoltage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+3.3V voltage
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+3.3V voltage
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrHlTwelveVoltage' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+12V voltage
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.3.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+12V voltage
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrLicLevel' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+current key level
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.4.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+current key level
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrLicSoftwareId' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+software id
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.4.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+software id
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrLicUpgrUntil' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+current key allows upgrading until this date
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.4.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+current key allows upgrading until this date
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrLicVersion' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+software version
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+scalar
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.4.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+software version
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrLicense' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.4
+</property>
+</object>
+<object id='mtxrQueueSimpleBytesIn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleBytesOut' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleDstAddr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleDstMask' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Simple queue
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Simple queue
+</property>
+</object>
+<object id='mtxrQueueSimpleIface' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+interface index
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+interface index
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='mtxrQueueSimpleName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimplePacketsIn' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.10
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimplePacketsOut' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.11
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleSrcAddr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleSrcMask' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueSimpleTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='mtxrQueueTreeBytes' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueTreeEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Tree queue
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Tree queue
+</property>
+</object>
+<object id='mtxrQueueTreeFlow' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+flowmark
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+flowmark
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueTreeIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='mtxrQueueTreeName' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueTreePackets' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueTreeParentIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+index of parent tree queue or parent interface
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+index of parent tree queue or parent interface
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrQueueTreeTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='mtxrQueues' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.2
+</property>
+</object>
+<object id='mtxrWireless' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+node
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1
+</property>
+</object>
+<object id='mtxrWlRtabAddr' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='mtxrWlRtabEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Wireless registration table. It is indexed by remote
+mac-address and local interface index
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Wireless registration table. It is indexed by remote
+mac-address and local interface index
+</property>
+</object>
+<object id='mtxrWlRtabIface' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='mtxrWlRtabRxBytes' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabRxPackets' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabRxRate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+bits per second
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.9
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+bits per second
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabStrength' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+dBm
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+dBm
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='mtxrWlRtabTxBytes' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabTxPackets' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlRtabTxRate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+bits per second
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.2.1.8
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+bits per second
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatBssid' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.6
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatEntry' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+Wireless station mode interface
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+row
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+Wireless station mode interface
+</property>
+</object>
+<object id='mtxrWlStatFreq' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+megahertz
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.7
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+megahertz
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatIndex' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+noaccess
+</property>
+</object>
+<object id='mtxrWlStatRxRate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+bits per second
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.3
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+bits per second
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatSsid' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.5
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatStrength' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+dBm
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.4
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+dBm
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+<object id='mtxrWlStatTable' module='Products.ZenModel.MibNode' class='MibNode'>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+table
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+</object>
+<object id='mtxrWlStatTxRate' module='Products.ZenModel.MibNode' class='MibNode'>
+<property id='zendoc' type='string'>
+bits per second
+</property>
+<property type="string" id="moduleName" mode="w" >
+MIKROTIK-EXPERIMENTAL-MIB
+</property>
+<property type="string" id="nodetype" mode="w" >
+column
+</property>
+<property type="string" id="oid" mode="w" >
+1.3.6.1.4.1.14988.1.1.1.1.1.2
+</property>
+<property type="string" id="status" mode="w" >
+current
+</property>
+<property type="string" id="description" mode="w" >
+bits per second
+</property>
+<property type="string" id="access" mode="w" >
+readonly
+</property>
+</object>
+</tomanycont>
+</object>
+</objects>
