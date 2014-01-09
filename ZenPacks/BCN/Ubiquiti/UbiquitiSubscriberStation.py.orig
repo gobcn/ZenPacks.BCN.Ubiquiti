@@ -50,6 +50,7 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
     #Device status
     def getStatus(self):
         return self.ssStatus
+<<<<<<< HEAD
 
     # remove extra info from ubiquiti firmware version
     def getFirmware(self):
@@ -62,6 +63,8 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
           UbntVer = LongVer[2]+"."+LongVer[3]+"."+LongVer[4]
        return UbntVer
 
+=======
+>>>>>>> e064ee685e4bd77d72700bcfc083fd9f2bfede47
     def convertStatus(self, statusCode):
         if statusCode == 1:
            return "Up"
