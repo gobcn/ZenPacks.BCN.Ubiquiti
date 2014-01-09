@@ -64,7 +64,7 @@ class UbiquitiSubscriberStation(CommandPlugin):
 		   om.ssIPAddr = dataDict['devices'][z]['ipv4']
 		   om.ssDeviceName = dataDict['devices'][z]['hostname']
 		   om.ssProduct = dataDict['devices'][z]['product']
-		   om.ssFWversion = self.ubiquitiVer(dataDict['devices'][z]['fwversion'])
+		   om.ssFWversion = dataDict['devices'][z]['fwversion']
 		   om.id = self.prepId(om.ssMAC)
 		   om.snmpindex = self.hexToDotDec(dataDict['devices'][z]['hwaddr'])
 		   om.ssStatus = 1
@@ -116,9 +116,3 @@ class UbiquitiSubscriberStation(CommandPlugin):
 	  if i == 5:
              MacDot += '5'
        return MacDot
-    #extract version as per aircontrol
-    def ubiquitiVer(self,LongVer):
-       UbntVer = ""
-       LongVer = LongVer.split('.')
-       UbntVer = LongVer[2]+"."+LongVer[3]
-       return UbntVer

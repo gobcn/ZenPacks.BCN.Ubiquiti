@@ -30,5 +30,5 @@ class IUbiquitiSubscriberStationInfo(IComponentInfo):
     ssIPAddr = SingleLineText(title=_t(u"SS Management IP"))
     ssDeviceName = SingleLineText(title=_t(u"Device Name"))
     ssProduct = SingleLineText(title=_t(u"Product"))
-    ssFWversion = SingleLineText(title=_t(u"FW version"))
+    firmware = SingleLineText(title=_t(u"FW version"))
     ssStatus = SingleLineText(title=_t(u"Status"))
