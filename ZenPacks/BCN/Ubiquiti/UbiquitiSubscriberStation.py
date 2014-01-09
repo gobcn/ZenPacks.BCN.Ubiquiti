@@ -59,9 +59,6 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
        if (int(LongVer[4]) > 15):
           UbntVer = LongVer[2]+"."+LongVer[3]+".0"
        else:
-          UbntVer = LongVer[2]+"."+LongVer[3]+"."+LongVer[4]
-       return UbntVer
-
     def convertStatus(self, statusCode):
         if statusCode == 1:
            return "Up"

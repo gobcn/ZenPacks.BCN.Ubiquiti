@@ -116,3 +116,12 @@ class UbiquitiSubscriberStation(CommandPlugin):
 	  if i == 5:
              MacDot += '5'
        return MacDot
+<<<<<<< HEAD
+=======
+    #extract version as per aircontrol
+    def ubiquitiVer(self,LongVer):
+       UbntVer = ""
+       LongVer = LongVer.split('.')
+       UbntVer = LongVer[2]+"."+LongVer[3]
+       return UbntVer
+>>>>>>> e064ee685e4bd77d72700bcfc083fd9f2bfede47
