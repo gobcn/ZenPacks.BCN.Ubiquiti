@@ -31,9 +31,16 @@ class UbiquitiSubscriberStationInfo(ComponentInfo):
     ssProduct = ProxyProperty("ssProduct")
     ssFWversion = ProxyProperty("ssFWversion")
     ssStatus = ProxyProperty("ssStatus")
+    ssDiscovery = ProxyProperty("ssDiscovery")
+    firmware = ProxyProperty("firmware")
+    distance = ProxyProperty("distance")
 
     @property
     def firmware(self):
         sufirmware = self._object.getFirmware()
         return sufirmware
 
+    @property
+    def distance(self):
+        sudistance = self._object.getDistance()
+        return sudistance

@@ -45,6 +45,8 @@ ZC.UbiquitiSubscriberStationPanel = Ext.extend(ZC.ComponentGridPanel, {
                 {name: 'ssMAC'},
                 {name: 'ssProduct'},
                 {name: 'firmware'},
+                {name: 'distance'},
+                {name: 'ssDiscovery'},
 		{name: 'ssStatus'}
             ],
             columns: [{
@@ -87,9 +89,21 @@ ZC.UbiquitiSubscriberStationPanel = Ext.extend(ZC.ComponentGridPanel, {
             },{
                 id: 'firmware',
                 dataIndex: 'firmware',
-                header: _t('FW version'),
+                header: _t('FW Version'),
                 sortable: true,
                 width: 90
+            },{
+                id: 'distance',
+                dataIndex: 'distance',
+                header: _t('SS Distance'),
+                sortable: true,
+                width: 75
+            },{
+                id: 'ssDiscovery',
+                dataIndex: 'ssDiscovery',
+                header: _t('Discovery'),
+                sortable: true,
+                width: 75
             },{
                 id: 'ssStatus',
                 dataIndex: 'ssStatus',

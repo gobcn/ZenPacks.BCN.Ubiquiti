@@ -14,6 +14,8 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
     ssProduct=''
     ssFWversion=''
     ssStatus=0
+    ssDistance=0
+    ssDiscovery=''
 
     _properties = ManagedEntity._properties + (
         {'id': 'ssMAC', 'type': 'string', 'mode': ''},
@@ -22,6 +24,8 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
 	{'id': 'ssProduct', 'type': 'string', 'mode': ''},
 	{'id': 'ssFWversion', 'type': 'string', 'mode': ''},
 	{'id': 'ssStatus', 'type': 'int', 'mode': ''},
+        {'id': 'ssDistance', 'type': 'int', 'mode': ''},
+        {'id': 'ssDiscovery', 'type': 'string', 'mode': ''},
     )
 
     _relations = ManagedEntity._relations + (
@@ -55,8 +59,11 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
     def getFirmware(self):
        UbntVer = ""
        LongVer = self.ssFWversion.split('.')
+       # in case long version has less than 5 elements, simply print whole thing
+       if len(LongVer) < 5:
+          UbntVer = LongVer
        # if minor revision greater than 15, it is probably build number instead
-       if (int(LongVer[4]) > 15):
+       elif (int(LongVer[4]) > 15):
           UbntVer = LongVer[2]+"."+LongVer[3]+".0"
        else:
           UbntVer = LongVer[2]+"."+LongVer[3]+"."+LongVer[4]
@@ -67,6 +74,16 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
            return "Up"
         else:
            return "Down"
+
+    def getDistance(self):
+        if self.ssDistance > 1000:
+           return str(self.ssDistance/1000.0) + " km"
+        else:
+           return str(self.ssDistance) + " metres"
+
+    def getInstDescription(self):
+        return self.ssDeviceName
+
     #Sort fix
     #def primarySortKey(self):
     #"""Sort by Device Name then by MAC"""

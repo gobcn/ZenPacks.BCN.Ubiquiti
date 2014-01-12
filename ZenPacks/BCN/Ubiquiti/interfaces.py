@@ -31,4 +31,5 @@ class IUbiquitiSubscriberStationInfo(IComponentInfo):
     ssDeviceName = SingleLineText(title=_t(u"Device Name"))
     ssProduct = SingleLineText(title=_t(u"Product"))
     firmware = SingleLineText(title=_t(u"FW version"))
-    ssStatus = SingleLineText(title=_t(u"Status"))
+    distance = SingleLineText(title=_t(u"SS Distance"))
+    ssDiscovery = SingleLineText(title=_t(u"Discovery"))

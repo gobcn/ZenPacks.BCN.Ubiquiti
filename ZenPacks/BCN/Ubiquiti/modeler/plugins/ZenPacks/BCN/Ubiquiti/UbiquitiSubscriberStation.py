@@ -20,24 +20,32 @@ import json
 class UbiquitiSubscriberStation(CommandPlugin):
 
     #ssh modeling
-    command = "/sbin/discover -j"
+    command = "echo -n `/sbin/discover -j`@@@SEPARATOR@@@`/usr/bin/wstalist`"
 
     relname = "ubiquitiSubscriberStation"
     modname = "ZenPacks.BCN.Ubiquiti.UbiquitiSubscriberStation"
     #get data from ZOPR 'getSSVolatileData', 'essid',
-    deviceProperties = CommandPlugin.deviceProperties + ('essid', 'getSSVolatileData')
+    deviceProperties = CommandPlugin.deviceProperties + ('getSSVolatileData',)
 	   
     def process(self, device, results, log):
         """collect SSH information from this device"""
 	#Log
         log.info('processing %s for device %s', self.name(), device.id)
         #JSON to py dict	
-        dataDict = json.loads(results)
-        essid = getattr(device, 'essid', None)
+        tempDiscoveryData = json.loads(results.split('@@@SEPARATOR@@@')[0])['devices']
+        discoveryData = {}
+        for item in tempDiscoveryData:
+            name = item.pop('hwaddr')
+            discoveryData[name] = item
+        
+        #discoveryData = (dict(discoveryData[mydevice]['hwaddr'],discoveryData[mydevice]) for mydevice in discoveryData)
+        wstalistData = json.loads(results.split('@@@SEPARATOR@@@')[1])
+        #essid = getattr(device, 'essid', None)
 	#volitiledata from Ubiquiti AP Device py
         volatiledata = getattr(device, 'getSSVolatileData', None)
 	# Uncomment next lines for debugging when modeling
-        #log.info( "Table Data= %s", dataDict )
+        log.debug( "Discovery Data= %s", discoveryData )
+        log.debug ("Wstalist Data= %s", wstalistData )
 	#log.info( "Device essid: %s ", essid)
 	#log.info( "Volatile Data: %s", volatiledata)
 
@@ -53,29 +61,39 @@ class UbiquitiSubscriberStation(CommandPlugin):
 	#Data to ZOPE
 	#wmode 1:? 2:SS, 3:AP
 	#hostname == System Service is AP
-        for z in range(len(dataDict['devices'])):
-            if dataDict['devices'][z]['essid'] == essid and dataDict['devices'][z]['wmode'] == 2 and dataDict['devices'][z]['hostname'] != "System Service":
-               try:
-                   om = self.objectMap()
-		   om.ssMAC = dataDict['devices'][z]['hwaddr']
-		   #keep data if SS is down check for existing data
-		   if (om.ssMAC in volatiledata) and len(volatiledata) > 0:
-		      del volatiledata[om.ssMAC]
-		   om.ssIPAddr = dataDict['devices'][z]['ipv4']
-		   om.ssDeviceName = dataDict['devices'][z]['hostname']
-		   om.ssProduct = dataDict['devices'][z]['product']
-		   om.ssFWversion = dataDict['devices'][z]['fwversion']
-		   om.id = self.prepId(om.ssMAC)
-		   om.snmpindex = self.hexToDotDec(dataDict['devices'][z]['hwaddr'])
-		   om.ssStatus = 1
+        for z in range(len(wstalistData)):
+            try:
+                om = self.objectMap()
+                om.ssMAC = wstalistData[z]['mac']
+                #keep data if SS is down check for existing data
+                if (om.ssMAC in volatiledata) and len(volatiledata) > 0:
+                   del volatiledata[om.ssMAC]
+                if om.ssMAC in discoveryData:
+                   om.ssDiscovery = "Enabled"
+                   om.ssIPAddr = discoveryData[om.ssMAC]['ipv4']
+                   om.ssDeviceName = discoveryData[om.ssMAC]['hostname']
+                   om.ssProduct = discoveryData[om.ssMAC]['product']
+                   om.ssFWversion = discoveryData[om.ssMAC]['fwversion']
+                else:
+                   om.ssDiscovery = "Disabled"
+                   om.ssIPAddr = ""
+                   om.ssDeviceName = wstalistData[z]['name']
+                   if len(om.ssDeviceName) == 13:
+                      om.ssDeviceName = om.ssDeviceName + "[...]"
+                   om.ssProduct = ""
+                   om.ssFWversion = ""
+                om.id = self.prepId(om.ssMAC)
+                om.ssDistance = wstalistData[z]['distance']
+                om.snmpindex = self.hexToDotDec(om.ssMAC)
+                om.ssStatus = 1
 
-               except AttributeError, errorInfo:
-                   log.warn( " Attribute error in UbiquitiSubscriberStation modeler plugin %s", errorInfo)
-                   continue
+            except AttributeError, errorInfo:
+                log.warn( " Attribute error in UbiquitiSubscriberStation modeler plugin %s", errorInfo)
+                continue
                #Debug
                #log.info ("Appending data: %s", str(om))
 	       #log.info ("Volatile data stack: %s", str(volatiledata))
-               rm.append(om) 
+            rm.append(om) 
         #Append data for SS which are down
 	if len(volatiledata) > 0:
             for mac in volatiledata:
