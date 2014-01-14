@@ -78,6 +78,8 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
     def getDistance(self):
         if self.ssDistance > 1000:
            return str(self.ssDistance/1000.0) + " km"
+        elif self.ssDistance < 150:
+           return "< 150 metres"
         else:
            return str(self.ssDistance) + " metres"
 

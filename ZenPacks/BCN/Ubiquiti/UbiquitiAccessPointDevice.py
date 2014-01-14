@@ -36,7 +36,7 @@ class UbiquitiAccessPointDevice(Device):
         """Return the volatile data on existing SUs for modeler use"""
         myvolatiledata = {}
         for ss in self.ubiquitiSubscriberStation():
-            ssinfo = { 'ssIPAddr' : ss.ssIPAddr, 'ssDeviceName' : ss.ssDeviceName, 'ssProduct' : ss.ssProduct, 'ssFWversion' : ss.ssFWversion }
+            ssinfo = { 'ssIPAddr' : ss.ssIPAddr, 'ssDeviceName' : ss.ssDeviceName, 'ssProduct' : ss.ssProduct, 'ssFWversion' : ss.ssFWversion, 'ssDistance' : ss.ssDistance, 'ssDiscovery' : ss.ssDiscovery }
             myvolatiledata[ss.ssMAC] = ssinfo
         return myvolatiledata
 

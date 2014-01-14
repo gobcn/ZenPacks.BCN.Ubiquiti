@@ -38,7 +38,7 @@ If you wish to further develop and possibly contribute back you should clone
 the git repository, then install the ZenPack in developer mode using the
 following commands::
 
-    git clone git://github.com/mjducharme/ZenPacks.BCN.Ubiquiti.git
+    git clone git://github.com/gobcn/ZenPacks.BCN.Ubiquiti.git
     zenpack --link --install ZenPacks.BCN.Ubiquiti
     zenoss restart
 
@@ -87,11 +87,13 @@ The plugin adds a "Ubiquiti Subscriber Stations" component type under Components
 * SS MAC Address - MAC address for the SS
 * Product - A string to describe SS model 
 * FW version - SS firmware version
-* Status - Custom status field for Up/Down status of SU
+* SS Distance - Distance to the SS in Meters or Kilometers
+* Discovery - Indicates whether discovery is enabled or disabled on the SS
+* Status - Custom status field for Up/Down status of SS
 * Monitored - true/false to enable/disable monitoring
 * Locking - component locking settings
 
-The following graphs are provided for the Subscriber Units:
+The following graphs are provided for the Subscriber Stations:
 
 * Throughput
 
@@ -110,9 +112,30 @@ The following graphs are provided for the Subscriber Units:
 * Signal - RSSI
 
   * SS Signal Strength (dBm)
+  * Noise Floor (dBm)
+
+* CCQ
+
+  * Displays the Client Connection Quality Percentage
+
+* Theoretical Maximum Throughput at Current Modulation
+
+  * Displays maximum transmit and receive speeds given modulation
+
+* AirMax Quality and Capacity
+
+  * Current AirMax Quality and Capacity in Percent
+
+* Transmit Power
+
+  * Current Transmit Power value
+
+* ACK
+
+  * Acknowledgement Timeout value
 
 Status monitoring for subscriber stations is also provided. Active polling is
-carried out, in addition to TODO:syslog messages parsing in a transofrm. 
+carried out, in addition to syslog messages parsing in a transform. 
 A custom "Status" field was used for the status indicator rather than built-in 
 status field due to the fact that the built in field uses events to determine 
 up/down status.
@@ -132,38 +155,32 @@ Known Issues
 Ubiquiti Access Points do not store any SS data in memory when the subscriber 
 is disconnected. This led to an issue where a previously modeled subscriber's 
 Device Name, IP, MAC address, Product and FW version would disappear if the 
-subscriber happened to be offline during a modeling cycle. The SS dat would 
+subscriber happened to be offline during a modeling cycle. The SS would 
 only reappear the next time a modeling cycle coincided with the subscriber 
 being online. To work around this issue, this ZenPack is designed to read the 
 prevous data from the DMD for customers who are offline during a model but 
-previously modeled successfully. An unavailable message is substituted for 
-customers who have never been modeled while they were online. 
+previously modeled successfully.  
 
-Automatic sorting of the list of Subscriber Units by Device Name is not working.
+Automatic sorting of the list of Subscriber Stations by Device Name is not working.
 Alphabetical sort is occuring, leading to wrong sorting. Clicking on the column
 header for Device Name after opening the list causes it to sort correctly and 
 can be used as a workaround until the cause of this issue is determined.
 
-Acknowledgements
-----------------
-Special thanks to Michael Ducharme.
-
 Screenshots
 -----------
-* |Access Point Monitoring and Ethernet Graph|
-* |Access Point Radio Graphs|
 * |Subscriber Unit Monitoring|
 * |Subscriber Unit Graphs|
 
 Version History
 ---------------
-* 1.50 - June 26, 2012 - Multiple bug fixes/enhancements: https://github.com/mjducharme/ZenPacks.BCN.Trango/issues?milestone=2&state=closed
-* 1.47 - June 20, 2012 - Initial Release
+* 1.02 - January 14, 2014 - Multiple bug fixes/enhancements
+  * Uses wstalist instead of discover to model device
+  * Adds discovery information if available (ex. firmware version, mgmt IP)
+  * Uses wstalist instead of SNMP for graphing - now graphs CCQ, airmax, etc.
+* 1.01 - August 15, 2012 - Initial Release
 
 .. _Zenoss: http://www.zenoss.com/
-.. _Latest Package for Python 2.6: https://github.com/downloads/mjducharme/ZenPacks.BCN.Trango/ZenPacks.BCN.Trango-1.50-py2.6.egg
+.. _Latest Package for Python 2.6: https://github.com/downloads/gobcn/ZenPacks.BCN.Ubiquiti/ZenPacks.BCN.Ubiquiti-1.02-py2.6.egg
 
-.. |Access Point Monitoring and Ethernet Graph| image:: https://github.com/mjducharme/ZenPacks.BCN.Trango/raw/master/docs/apmonitoring.png
-.. |Access Point Radio Graphs| image:: https://github.com/mjducharme/ZenPacks.BCN.Trango/raw/master/docs/aprfinterface.png
-.. |Subscriber Unit Monitoring| image:: https://github.com/mjducharme/ZenPacks.BCN.Trango/raw/master/docs/sumonitoring.png
-.. |Subscriber Unit Graphs| image:: https://github.com/mjducharme/ZenPacks.BCN.Trango/raw/master/docs/sugraphs.png
+.. |Subscriber Unit Monitoring| image:: https://github.com/gobcn/ZenPacks.BCN.Ubiquiti/raw/master/docs/sumonitoring.png
+.. |Subscriber Unit Graphs| image:: https://github.com/gobcn/ZenPacks.BCN.Ubiquiti/raw/master/docs/sugraphs.png

@@ -104,6 +104,8 @@ class UbiquitiSubscriberStation(CommandPlugin):
                    om.ssDeviceName = volatiledata[mac]['ssDeviceName']
                    om.ssProduct = volatiledata[mac]['ssProduct']
                    om.ssFWversion = volatiledata[mac]['ssFWversion']
+                   om.ssDistance = volatiledata[mac]['ssDistance']
+                   om.ssDiscovery = volatiledata[mac]['ssDiscovery']		
                    om.id = self.prepId(om.ssMAC)
                    om.snmpindex = self.hexToDotDec(om.ssMAC)
                    om.ssStatus = 0

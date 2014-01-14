@@ -23,10 +23,17 @@ class wstalist(ComponentCommandParser):
         # Map datapoints by data you can find in the command output
        
         ifs = {}
+	# unitsdown is used to track up down status of subscriber unit
+        unitsdown = []
         for dp in cmd.points:
             dp.component = dp.data['componentScanValue']
+	    #assume all units are down by default
+            if dp.component not in unitsdown:
+               unitsdown.append(dp.component)
             points = ifs.setdefault(dp.component, {})
             points[dp.id] = dp
+
+        #print "ifs is: " + str(ifs)
 
         # split data into component blocks
         parts = json.loads(cmd.result.output)
@@ -43,6 +50,11 @@ class wstalist(ComponentCommandParser):
 
             part = flatten_dict(part)
 
+            # if we are here it means the unit is up, so remove it from the down list
+            if component in unitsdown: unitsdown.remove(component)
+            # if unit is in list it is up, add fake value to results
+            part['ss-status'] = 1 
+
             # find any datapoints
             for name, value in part.items():
                 dp = points.get(name, None)
@@ -50,6 +62,15 @@ class wstalist(ComponentCommandParser):
                    if value in ('-', ''): value = 0
                    result.values.append( (dp, float(value) ) )
 
-        #log.debug(pformat(result))
+        #if ssstatus == 1:
+        # anything left over has to be down
+        for unit in unitsdown:
+            points = ifs.get(unit, None)
+            if not points: continue
+	    dp = points.get('ss-status', None)
+	    if dp is not None:
+               result.values.append( (dp, 0.0) )
+
+#log.debug(pformat(result))
         return result
 

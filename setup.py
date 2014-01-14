@@ -3,8 +3,8 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = "ZenPacks.BCN.Ubiquiti"
-VERSION = "1.01"
-AUTHOR = "Olekisy Vasylyuk"
+VERSION = "1.02"
+AUTHOR = "Oleksiy Vasylyuk"
 LICENSE = ""
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.BCN']
 PACKAGES = ['ZenPacks', 'ZenPacks.BCN', 'ZenPacks.BCN.Ubiquiti']
