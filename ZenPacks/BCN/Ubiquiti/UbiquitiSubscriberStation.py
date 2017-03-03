@@ -62,9 +62,6 @@ class UbiquitiSubscriberStation(DeviceComponent, ManagedEntity):
        # in case long version has less than 5 elements, simply print whole thing
        if len(LongVer) < 5:
           UbntVer = LongVer
-       # if minor revision greater than 15, it is probably build number instead
-       elif (int(LongVer[4]) > 15):
-          UbntVer = LongVer[2]+"."+LongVer[3]+".0"
        else:
           UbntVer = LongVer[2]+"."+LongVer[3]+"."+LongVer[4]
        return UbntVer
