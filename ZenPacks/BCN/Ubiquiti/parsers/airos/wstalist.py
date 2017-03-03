@@ -45,8 +45,10 @@ class wstalist(ComponentCommandParser):
             points = ifs.get(component, None)
             if not points: continue
 
-            del part['signals']
-	    del part['rates']
+			if 'signals' in part:
+                del part['signals']
+		    if 'rates' in part:
+                del part['rates']
 
             part = flatten_dict(part)
 
